@@ -8,3 +8,5 @@ Flask Web page to interact with the model to predict runtimes of burn pro3d with
 - export FLASK_APP=app.py
 - export FLASK_ENV=development
 - flask run
+
+- if needed, export key
