@@ -1,77 +1,135 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Add a New Course {% endblock %}</h1>
+	<h1>{% block title %} Predict BurnPro3D Runtime {% endblock %}</h1>
+	<form method="POST" action="/">
+		{{ form.csrf_token }}
 
-    <form method="POST" action="/">
-        {{ form.csrf_token }}
-        <p>
-            {{ form.title.label }}
-            {{ form.title(size=20) }}
-        </p>
+		<table>	
+		<tr>
+		    <th>Label</th>
+		    <th></th>
+		  </tr>
+		  <tr>
+		    <td>{{ form.sim_time.label }}</td>
+		    <td>{{ form.sim_time(size=20) }}</td>
+		  </tr>
+		  <tr>
+		    <td>{{ form.surface_moisture.label }}</td>
+		    <td>{{ form.surface_moisture(size=20) }}</td>
+		  </tr>
+		  <tr>
+		    <td>{{ form.timestep.label }}</td>
+		    <td>{{ form.timestep(size=20) }}</td>
+		  </tr>
+		  <tr>
+		    <td>{{ form.wind_direction.label }}</td>
+		    <td>{{ form.wind_direction(size=20) }}</td>
+		  </tr>
+		  <tr>
+		    <td>{{ form.canopy_moisture.label }}</td>
+		    <td>{{ form.canopy_moisture(size=20) }}</td>
+		  </tr>
+		  <tr>
+		    <td>{{ form.run_max_mem_rss_bytes.label }}</td>
+		    <td>{{ form.run_max_mem_rss_bytes(size=20) }}</td>
+		  </tr>
+		  <tr>
+		    <td>{{ form.area.label }}</td>
+		    <td>{{ form.area(size=20) }}</td>
+		  </tr>
+		  <tr>
+		    <td>{{ form.steps_fire.label }}</td>
+		    <td>{{ form.steps_fire(size=20) }}</td>
+		  </tr>
+		  </table>
 
-        {% if form.title.errors %}
-            <ul class="errors">
-                {% for error in form.title.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
 
-        <p>
-            {{ form.description.label }}
-        </p>
-        {{ form.description(rows=10, cols=50) }}
+		<br>
+		<hr>
+		
+		<p>
+			{{ form.available() }} {{ form.available.label }}
+		</p>
 
-        {% if form.description.errors %}
-            <ul class="errors">
-                {% for error in form.description.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+		{% if form.available.errors %}
+			<ul class="errors">
+				{% for error in form.available.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 
-        <p>
-            {{ form.price.label }}
-            {{ form.price() }}
-        </p>
+		{% if form.sim_time.errors %}
+			<ul class="errors">
+				{% for error in form.sim_time.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 
-        {% if form.price.errors %}
-            <ul class="errors">
-                {% for error in form.price.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+		{% if form.surface_moisture.errors %}
+			<ul class="errors">
+				{% for error in form.surface_moisture.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 
-        <p>
-            {{ form.available() }} {{ form.available.label }}
-        </p>
+		{% if form.timestep.errors %}
+			<ul class="errors">
+				{% for error in form.timestep.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 
-        {% if form.available.errors %}
-            <ul class="errors">
-                {% for error in form.available.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+		{% if form.wind_direction.errors %}
+			<ul class="errors">
+				{% for error in form.wind_direction.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 
-        <p>
-            {{ form.level.label }}
-            {{ form.level() }}
-        </p>
+		{% if form.canopy_moisture.errors %}
+			<ul class="errors">
+				{% for error in form.canopy_moisture.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 
-        {% if form.level.errors %}
-            <ul class="errors">
-                {% for error in form.level.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
 
-        <p>
-            <input type="submit" value="Add">
-        </p>
-    </form>
+		{% if form.run_max_mem_rss_bytes.errors %}
+			<ul class="errors">
+				{% for error in form.run_max_mem_rss_bytes.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+
+		{% if form.area.errors %}
+			<ul class="errors">
+				{% for error in form.area.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+
+		{% if form.steps_fire.errors %}
+			<ul class="errors">
+				{% for error in form.steps_fire.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		<p>
+			<input type="submit" value="Add">
+		</p>
+	</form>
 
 {% endblock %}

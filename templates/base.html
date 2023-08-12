@@ -1,26 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %} {% endblock %} - FlaskApp</title>
-    <style>
-        nav a {
-            color: #d64161;
-            font-size: 3em;
-            margin-left: 50px;
-            text-decoration: none;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<title>{% block title %} {% endblock %} - FlaskApp</title>
+	<style>
+
+		body {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		nav a {
+			color: steelblue;
+			font-size: 3em;
+			margin-left: 50px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+			border:2px solid black;
+			background-color: #eeeeee;
+		}
+		th {
+			border: 1px solid #dddddd;
+			border-right: 1px solid #666;
+			border-bottom: 1px solid gray;
+			text-align: left;
+			padding: 8px;
+			background-color: #666666;
+			color: white;
+		}
+		
+		td {
+/*			border: 1px solid #dddddd;*/
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+
+
+	</style>
 </head>
 <body>
-    <nav>
-        <a href="{{ url_for('index') }}">FlaskApp</a>
-        <a href="{{ url_for('courses') }}">Courses</a>
-        <a href="#">About</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %} {% endblock %}
-    </div>
+	<!-- <nav>
+		<a href="{{ url_for('index') }}">Home</a>
+		<a href="#">About</a>
+	</nav> -->
+
+	<div class="content">
+		{% block content %} {% endblock %}
+	</div>
 </body>
 </html>

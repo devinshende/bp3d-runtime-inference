@@ -19,13 +19,17 @@ courses_list = [{
 def index():
     form = CourseForm()
     if form.validate_on_submit():
-        courses_list.append({'title': form.title.data,
-                             'description': form.description.data,
-                             'price': form.price.data,
-                             'available': form.available.data,
-                             'level': form.level.data
-                             })
+        print(form)
+        print(form.sim_time.data)
+        # courses_list.append({'title': form.sim_time.data,
+        #                      'description': form.surface_moisture.data,
+        #                      'price': form.wind_direction.data,
+        #                      'available': form.area.data,
+        #                      'level': form.steps_fire.data
+        #                      })
+        # print(courses_list)
         return redirect(url_for('courses'))
+    print("errors" ,form.errors)
     return render_template('index.html', form=form)
 
 @app.route('/courses/')
