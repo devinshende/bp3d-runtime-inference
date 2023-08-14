@@ -37,4 +37,4 @@ def index():
 
 @app.route('/courses/')
 def courses():
-	return render_template('courses.html', courses_list=courses_list)
+	return render_template('courses.html', in_data=in_data.items())

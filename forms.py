@@ -18,7 +18,7 @@ columns = [
 class CourseForm(FlaskForm):
 
 	sim_time 				= IntegerField('sim_time',validators=[InputRequired()], default=1200)
-	surface_moisture 		= DecimalField('surface_moisture',validators=[InputRequired()],default=1.0)
+	surface_moisture 		= DecimalField('surface_moisture',validators=[InputRequired()], default=1.0)
 	timestep 				= IntegerField('timestep',validators=[InputRequired()])
 	wind_direction			= IntegerField('wind_direction',validators=[InputRequired()])
 	wind_speed 				= IntegerField('wind_speed',validators=[InputRequired()])
