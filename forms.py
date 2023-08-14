@@ -17,15 +17,15 @@ columns = [
 
 class CourseForm(FlaskForm):
 
-	sim_time 				= IntegerField('sim_time',validators=[InputRequired()], default=1200)
-	surface_moisture 		= DecimalField('surface_moisture',validators=[InputRequired()], default=10.2)
-	timestep 				= IntegerField('timestep',validators=[InputRequired()],default=4)
-	wind_direction			= IntegerField('wind_direction',validators=[InputRequired()],default=40)
-	wind_speed 				= IntegerField('wind_speed',validators=[InputRequired()],default=20)
-	canopy_moisture			= IntegerField('canopy_moisture',validators=[InputRequired()],default=1)
-	run_max_mem_rss_bytes	= IntegerField('run_max_mem_rss_bytes',validators=[InputRequired()],default=24)
-	area 					= IntegerField('area',validators=[InputRequired()],default=400)
-	steps_fire				= IntegerField('steps_fire',validators=[InputRequired()],default=100)
+	sim_time 				= IntegerField('sim_time',validators=[InputRequired()], default=9500)
+	surface_moisture 		= DecimalField('surface_moisture',validators=[InputRequired()], default=0.1)
+	timestep 				= IntegerField('timestep',validators=[InputRequired()],default=600)
+	wind_direction			= IntegerField('wind_direction',validators=[InputRequired()],default=180)
+	wind_speed 				= IntegerField('wind_speed',validators=[InputRequired()],default=5)
+	canopy_moisture			= DecimalField('canopy_moisture',validators=[InputRequired()],default=0.9)
+	run_max_mem_rss_bytes	= IntegerField('run_max_mem_rss_bytes',validators=[InputRequired()],default=833674)
+	area 					= DecimalField('area',validators=[InputRequired()],default=646416)
+	steps_fire				= IntegerField('steps_fire',validators=[InputRequired()],default=600)
 
 	# title = StringField('Title', validators=[InputRequired(), Length(min=10, max=100)])
 	

@@ -3,6 +3,10 @@
 {% block content %}
     <h1>{% block title %} Input Data {% endblock %}</h1>
     <table>
+    <tr>
+        <th>Feature</th>
+        <th></th>
+    </tr>
     {% for k, v in form_data %}
     <tr>
         <td class="key"> {{ k }} </td>
@@ -16,5 +20,5 @@
     <h2> {{prediction_str}} </h2>
     <hr>
     <br>
-    <a href="/">Make Another Prediction</a>
+    <a href="/" class="button">Make Another Prediction</a>
 {% endblock %}

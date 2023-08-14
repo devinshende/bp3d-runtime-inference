@@ -25,8 +25,7 @@ def print_categories():
         print(f"{convert(CATEGORIES[i])}   \t{i}")
 
 def convert(seconds):
-    return humanize.naturaldelta(timedelta(seconds=seconds))
-
+	return humanize.naturaldelta(timedelta(seconds=seconds))
 
 
 @app.route('/', methods=('GET', 'POST'))
