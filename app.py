@@ -44,13 +44,13 @@ def index():
 		form_data['area'] 					= float(form.area.data)
 		form_data['steps_fire'] 			= float(form.steps_fire.data)
 		pred_data = np.array(list(form_data.values()))
-		return redirect(url_for('courses'))
+		return redirect(url_for('prediction'))
 	print("errors" ,form.errors)
 	return render_template('index.html', form=form)
 
 # RENAME
-@app.route('/courses/')
-def courses():
+@app.route('/prediction/')
+def prediction():
 	with open('models.pkl','rb') as file:
 		models = pickle.load(file)
 		print(models)
@@ -60,4 +60,4 @@ def courses():
 	print(prediction)
 	print(CATEGORIES[prediction])
 	prediction_str = CATEGORY_CONVERSION[prediction]
-	return render_template('courses.html', form_data=form_data.items(), prediction_str=prediction_str)
+	return render_template('prediction.html', form_data=form_data.items(), prediction_str=prediction_str)
