@@ -37,7 +37,5 @@ class CourseForm(FlaskForm):
 	# level = RadioField('Level', choices=['Beginner', 'Intermediate', 'Advanced'],
 	# 	validators=[InputRequired()])
 
-	available = BooleanField('Available', default='checked')
-
 
 

@@ -27,6 +27,10 @@
 		    <td>{{ form.wind_direction(size=20) }}</td>
 		  </tr>
 		  <tr>
+		    <td>{{ form.wind_speed.label }}</td>
+		    <td>{{ form.wind_speed(size=20) }}</td>
+		  </tr>
+		  <tr>
 		    <td>{{ form.canopy_moisture.label }}</td>
 		    <td>{{ form.canopy_moisture(size=20) }}</td>
 		  </tr>
@@ -44,21 +48,6 @@
 		  </tr>
 		  </table>
 
-
-		<br>
-		<hr>
-		
-		<p>
-			{{ form.available() }} {{ form.available.label }}
-		</p>
-
-		{% if form.available.errors %}
-			<ul class="errors">
-				{% for error in form.available.errors %}
-					<li>{{ error }}</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
 
 		{% if form.sim_time.errors %}
 			<ul class="errors">
@@ -91,6 +80,16 @@
 				{% endfor %}
 			</ul>
 		{% endif %}
+
+
+		{% if form.wind_speed.errors %}
+			<ul class="errors">
+				{% for error in form.wind_speed.errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
 
 		{% if form.canopy_moisture.errors %}
 			<ul class="errors">
